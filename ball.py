@@ -11,6 +11,7 @@ class Ball(Turtle):
         self.x_move = 10
         self.y_move = 10
         self.shapesize(stretch_wid=0.8, stretch_len=0.8, outline=1)
+        self.move_speed = 0.05
 
     def ball_move(self):
         x_cor = self.xcor() + self.x_move
@@ -22,7 +23,9 @@ class Ball(Turtle):
 
     def hit_player(self):
         self.x_move *= -1
+        self.move_speed *= 0.9
 
     def reset_ball(self):
         self.hit_player()
+        self.move_speed = 0.05
         self.goto((0, 0))

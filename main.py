@@ -11,7 +11,6 @@ from ball import Ball
 
 
 WINNER_NUMBER = 10
-SLEEP = 0.1
 
 
 screen = Screen()
@@ -35,8 +34,7 @@ screen.onkey(player_2.move_down, 'k')
 is_game_on = True
 while is_game_on:
     screen.update()
-    sleep(SLEEP)
-
+    sleep(ball.move_speed)
     # Detect collision with the wall.
     if ball.ycor() >= 350 or ball.ycor() <= -350:
         ball.hit_y()
@@ -44,8 +42,6 @@ while is_game_on:
     # Detect collision with the player
     if ball.distance(player_1) <= 50 and ball.xcor() < -355 or ball.distance(player_2) <= 50 and ball.xcor() > 350:
         ball.hit_player()
-        if SLEEP - 0.005 > 0:
-            SLEEP -= 0.005
 
     # Detect right point.
     if ball.xcor() > 375:
