@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 
-BAR_SIZE = 4
+BAR_SIZE = 5
 
 
 class PlayerBar(Turtle):
@@ -19,8 +19,8 @@ class PlayerBar(Turtle):
 
     def move_up(self):
         if self.ycor() < 350:
-            self.forward(50)
+            self.forward(40)
 
     def move_down(self):
         if self.ycor() > -350:
-            self.backward(50)
+            self.backward(40)
