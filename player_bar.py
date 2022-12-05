@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 
-BAR_SIZE = 4
+BAR_SIZE = 5
 
 
 class PlayerBar(Turtle):

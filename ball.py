@@ -8,18 +8,24 @@ class Ball(Turtle):
         self.color('white')
         self.penup()
         self.speed(1)
-        self.setheading(115)
+        self.x_move = 10
+        self.y_move = 10
         self.shapesize(stretch_wid=0.8, stretch_len=0.8, outline=1)
+        self.move_speed = 0.05
 
     def ball_move(self):
-        self.forward(30)
+        x_cor = self.xcor() + self.x_move
+        y_cor = self.ycor() + self.y_move
+        self.goto(x_cor, y_cor)
 
-    def change_angle(self):
-        self.setheading(360-self.heading())
+    def hit_y(self):
+        self.y_move *= -1
 
     def hit_player(self):
-        self.setheading(180-self.heading())
+        self.x_move *= -1
+        self.move_speed *= 0.9
 
     def reset_ball(self):
         self.hit_player()
+        self.move_speed = 0.05
         self.goto((0, 0))
