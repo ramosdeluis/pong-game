@@ -19,8 +19,8 @@ class PlayerBar(Turtle):
 
     def move_up(self):
         if self.ycor() < 350:
-            self.forward(40)
+            self.forward(50)
 
     def move_down(self):
         if self.ycor() > -350:
-            self.backward(40)
+            self.backward(50)
